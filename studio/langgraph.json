@@ -1,0 +1,18 @@
+{
+  "dockerfile_lines": [],
+  "graphs": {
+    "agent": "./agent.py:graph"
+  },
+  "env": [
+    "OPENAI_API_KEY",
+    "LANGCHAIN_API_KEY",
+    "LANGCHAIN_TRACING_V2",
+    "ANTHROPIC_API_KEY",
+    "TAVILY_API_KEY",
+    "GPLACES_API_KEY"
+  ],
+  "python_version": "3.11",
+  "dependencies": [
+    "."
+  ]
+}
