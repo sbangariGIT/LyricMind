@@ -20,7 +20,7 @@ def add_meta_data(state: MessagesState):
     return {
         "messages": [
             chain.invoke(
-                {"input": state["messages"][-1]}
+                {"song": state["messages"][-1]}
             ) 
         ]
     }
@@ -34,7 +34,7 @@ def song_creation(state: MessagesState):
     return {
         "messages": [
             chain.invoke(
-                {"input": state["messages"][:-1]}
+                {"description": state["messages"][:-1]}
             ) 
         ]
     }
@@ -54,7 +54,7 @@ def prompt_validation(state: MessagesState):
     }
 
 def valid_input_check(state) -> Literal["song_creation","__end__"]:
-    if state["messages"][-1] == "yes":
+    if state["messages"][-1].content == "Yes":
         return "song_creation"
     return "__end__"
 
